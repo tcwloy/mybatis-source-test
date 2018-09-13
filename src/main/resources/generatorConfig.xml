@@ -72,7 +72,7 @@
         <!--<table schema="guanyu" tableName="dictionary" domainObjectName="Dictionary">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
         </table>-->
-        <table schema="test" tableName="tb_user" domainObjectName="User">
+        <table schema="test" tableName="tb_order" domainObjectName="Order">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
         </table>
 

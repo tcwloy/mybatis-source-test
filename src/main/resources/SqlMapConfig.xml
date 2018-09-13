@@ -3,13 +3,16 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-    <properties resource="db.properties"></properties>
+    <properties resource="db.properties">
+        <property name="org.apache.ibatis.parsing.PropertyParser.enable-default-value" value="true"></property>
+        <property name="org.apache.ibatis.parsing.PropertyParser.default-value-separator" value="?:"></property>
+    </properties>
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>
-            <dataSource type="com.github.tcwloy.mybatis.datasource.DruidDatasourceFactory">
+            <dataSource type="com.github.tcwloy.mybatis.util.DruidDatasourceFactory">
             <!--<dataSource type="POOLED">-->
-                <property name="driverClass" value="${jdbc.driver}"/>
+                <property name="driverClass" value="${jdbc.driver?:com.mysql.jdbc.Driver}"/>
                 <!--<property name="driver" value="${jdbc.driver}"/>-->
                 <property name="url" value="${jdbc.url}"/>
                 <property name="username" value="${jdbc.username}"/>
@@ -20,5 +23,8 @@
     <mappers>
         <!--<package name="com.github.tcwloy.mybatis.mapper"></package>-->
         <mapper resource="mapper/UserMapper.xml"></mapper>
+        <mapper resource="mapper/UserExtMapper.xml"></mapper>
+        <mapper resource="mapper/OrderMapper.xml"></mapper>
+        <mapper resource="mapper/OrderExtMapper.xml"></mapper>
     </mappers>
 </configuration>

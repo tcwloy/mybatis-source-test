@@ -1,4 +1,4 @@
-package com.github.tcwloy.mybatis.datasource;
+package com.github.tcwloy.mybatis.test;
 
 import org.apache.ibatis.datasource.DataSourceFactory;
 import org.apache.ibatis.datasource.unpooled.UnpooledDataSourceFactory;
